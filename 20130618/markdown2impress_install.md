@@ -43,4 +43,6 @@ markdown2impress を git clone する
 Markdown ファイルを変換する
 --
 
+$HOME/bin とかにリンクを張るなりして利用する。
+
     ~/bin/markdown2impress.pl hoge.md
