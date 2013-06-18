@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h2>Mac に markdow2impress をインストールした</h2>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h2>前提</h2>
+
+<ul>
+<li>Mac OS X 10.7</li>
+<li>homebrew 導入済み</li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h2>cpanm をインストール</h2>
+
+<pre><code>brew install cpanm
+</code></pre>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h2>perl の lib パスを設定</h2>
+
+<p>.bashrc を修正する。</p>
+
+<pre><code> vi ~/.bashrc
+</code></pre>
+
+<p>以下を追加する。</p>
+
+<pre><code>export PERL_CPANM_OPT="--local-lib=~/perl5"
+export PATH=$HOME/perl5/bin:$PATH;
+export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB;
+</code></pre>
+
+<p><code>source .bashrc</code> にて設定を読みこませる。</p>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>必要なモジュールをインストール</h2>
+
+<pre><code>cpanm install Data/Section/Simple.pm 
+cpanm install Text/Markdown.pm
+cpanm install Text/Xslate.pm
+cpanm install Path/Class.pm
+</code></pre>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h2>markdown2impress を git clone する</h2>
+
+<pre><code> git clone https://github.com/yoshiki/markdown2impress.git
+</code></pre>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h2>Markdown ファイルを変換する</h2>
+
+<pre><code>~/bin/markdown2impress.pl hoge.md
+</code></pre>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="js/impress.js"></script>
+
+</body>
+</html>
+
